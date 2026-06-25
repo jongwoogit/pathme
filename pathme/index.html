@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PathMe — 춘천 여행지 추천</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ── 헤더 ──────────────────────────────────────────────── -->
+<header>
+  <div class="logo">
+    <div class="logo-dot"></div>
+    PathMe
+  </div>
+  <div class="header-sub">춘천 AI 여행지 추천 서비스</div>
+</header>
+
+<!-- ── 메인 레이아웃 ──────────────────────────────────────── -->
+<div class="layout">
+
+  <!-- 왼쪽: 채팅 패널 -->
+  <div class="chat-panel">
+    <div class="chat-messages" id="chatMessages"></div>
+
+    <!-- 수집된 취향 태그 바 (추천 완료 후 표시) -->
+    <div class="profile-bar" id="profileBar">
+      <div class="profile-label">수집된 취향 태그</div>
+      <div class="profile-tags" id="profileTags"></div>
+    </div>
+
+    <!-- 텍스트 입력 -->
+    <div class="chat-input-area">
+      <textarea id="userInput" placeholder="답변을 입력하세요..." rows="1"></textarea>
+      <button id="sendBtn" title="전송">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+             stroke-linecap="round" stroke-linejoin="round">
+          <line x1="22" y1="2" x2="11" y2="13"></line>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- 오른쪽: 추천 결과 패널 -->
+  <div class="result-panel">
+    <div class="result-header">
+      <h2>추천 여행지</h2>
+      <p id="resultSubtitle">대화를 통해 취향을 알려주세요</p>
+    </div>
+    <div class="result-list" id="resultList">
+      <div class="empty-state">
+        <div class="empty-icon">🗺️</div>
+        <h3>아직 추천 결과가 없어요</h3>
+        <p>AI와 대화하며 취향을 알려주시면 딱 맞는 춘천 여행지를 추천해드려요.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── JS 로드 순서 중요: data → api → ui → app ──────────── -->
+<script src="js/data.js"></script>
+<script src="js/api.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
