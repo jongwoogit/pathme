@@ -1,6 +1,6 @@
 # PathMe — 춘천 AI 여행지 추천 서비스
 
-대화를 통해 사용자 취향을 수집하고, Claude AI가 최적의 춘천 여행지를 추천하는 웹 서비스입니다.
+대화를 통해 사용자 취향을 수집하고, 최적의 춘천 여행지를 추천하는 웹 서비스입니다.
 
 ---
 
@@ -13,7 +13,7 @@ pathme/
 │   └── style.css       # 전체 스타일
 ├── js/
 │   ├── data.js         # 춘천 여행지 DB + 대화 흐름 정의
-│   ├── api.js          # Claude API 호출 전담
+│   ├── api.js          # apen ai API 호출 전담
 │   ├── ui.js           # DOM 렌더링 전담 (메시지·카드·태그)
 │   └── app.js          # 상태 관리 + 전체 흐름 오케스트레이션
 └── README.md
@@ -24,7 +24,7 @@ pathme/
 | 파일 | 역할 | 건드릴 때 |
 |------|------|-----------|
 | `data.js` | 여행지 데이터, 대화 질문 목록 | 장소 추가/수정, 질문 추가 |
-| `api.js` | Claude API 호출, 프롬프트 조립 | 프롬프트 수정, 모델 변경 |
+| `api.js` | apen ai API 호출, 프롬프트 조립 | 프롬프트 수정, 모델 변경 |
 | `ui.js` | 화면 렌더링 (DOM 조작) | 카드 디자인, 메시지 형태 변경 |
 | `app.js` | 전체 흐름, 상태 관리 | 대화 로직, 추천 흐름 변경 |
 | `style.css` | 색상, 레이아웃, 컴포넌트 스타일 | 디자인 변경 |
@@ -43,9 +43,6 @@ pathme/
 > Live Server 사용을 강력히 권장합니다.
 
 ### API 키 설정
-1. [console.anthropic.com](https://console.anthropic.com) 에서 API 키 발급
-2. 서비스 상단 노란 배너에 `sk-ant-...` 키 입력 후 저장
-3. 키는 브라우저 `localStorage`에 저장되어 다음 방문 시 자동 입력됨
 
 ---
 
@@ -84,6 +81,6 @@ pathme/
 ## 기술 스택
 
 - **Frontend**: 바닐라 HTML/CSS/JS (프레임워크 없음)
-- **AI**: Claude Sonnet 4.6 (Anthropic API)
+- **AI**: "gpt-4o-mini" 
 - **DB**: 하드코딩된 춘천 여행지 JSON (추후 Pinecone 등으로 교체 가능)
 - **추천 로직**: LLM 기반 프로필 매칭 + 유사도 점수화
